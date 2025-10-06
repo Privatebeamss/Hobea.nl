@@ -239,16 +239,179 @@ footer a:hover {
 }
 
 /* =========================
+   MOBILE MENU TOGGLE
+========================= */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.8em;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2em;
+  /* Header & Navigation */
+  header {
+    flex-wrap: wrap;
+    padding: 15px 5%;
   }
+  
+  .logo {
+    font-size: 1.3em;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(10, 15, 28, 0.98);
+    backdrop-filter: blur(10px);
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding: 80px 20px 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  nav.active {
+    left: 0;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  nav ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  nav a {
+    display: block;
+    padding: 15px 10px;
+    font-size: 1.1em;
+  }
+  
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    height: auto;
+    padding: 100px 0 60px;
+  }
+  
+  .hero-content {
+    padding: 0 15px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+  
   .hero-content p {
     font-size: 1em;
+    margin-bottom: 30px;
   }
-  nav ul {
-    gap: 15px;
+  
+  .btn {
+    display: inline-block;
+    max-width: 260px;
+    width: 100%;
+    padding: 14px 25px;
+    font-size: 0.95em;
+  }
+  
+  /* Sections */
+  section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    width: 92%;
+  }
+  
+  h2.section-title {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+  }
+  
+  /* Grid / Cards */
+  .features,
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature,
+  .card {
+    padding: 30px 20px;
+  }
+  
+  .feature h3,
+  .card h3 {
+    font-size: 1.3em;
+  }
+  
+  .feature p,
+  .card p {
+    font-size: 0.9em;
+  }
+  
+  /* Forms */
+  form {
+    padding: 25px 20px;
+  }
+  
+  form input,
+  form textarea {
+    font-size: 16px;
+  }
+  
+  form button {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 30px 15px;
+    font-size: 0.85em;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1em;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+  
+  .hero-content p {
+    font-size: 0.95em;
+  }
+  
+  h2.section-title {
+    font-size: 1.4em;
+  }
+  
+  .feature,
+  .card {
+    padding: 25px 15px;
   }
 }
