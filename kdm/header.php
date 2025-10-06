@@ -8,6 +8,7 @@
 <body <?php body_class(); ?>>
 <header>
   <div class="logo">HOBEA SPEELAUTOMATEN</div>
+  <button class="menu-toggle" aria-label="Toggle menu">☰</button>
   <nav>
     <?php
       wp_nav_menu(array(
